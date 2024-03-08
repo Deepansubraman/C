@@ -1,0 +1,15 @@
+
+#include <stdio.h>
+main() 
+{
+  deepan();
+  printf("1");
+  deepan();
+}
+void deepan()
+    {
+        int i;
+        for(i=1;i<=20;i++)
+        printf("1");
+    }
+}
