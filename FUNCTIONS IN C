@@ -1,0 +1,24 @@
+#include <stdio.h>
+int e_of_four(int a, int b, int c, int d) {
+    int e=a;
+    if (b>e) {
+        max = b;
+    }
+    if (c>e) {
+        e=c;
+    }
+    if (d>e) {
+        e=d;
+    }
+    return e;
+}
+
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = e_of_four(a, b, c, d);
+    printf("%d", ans);
+    
+    return 0;
+}
