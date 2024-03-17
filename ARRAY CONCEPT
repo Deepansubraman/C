@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+ int a;
+ scanf("%d",&a);
+ char *b[]={"zero","one","two","three","four","five","six","seven","eight"};
+ if(a<9)
+ {
+     printf("%s",b[a]);
+ }   
+ else {
+ printf("Greater than 9");
+ }
+    return 0;
+}
