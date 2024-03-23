@@ -1,0 +1,17 @@
+#include <stdio.h>
+void reverseArray(int arr[], int size) {
+	int arrayarr[size];
+	for (int i = 0; i < size; i++) {
+		arrayarr[i] = arr[size - i - 1];
+	}
+	printf("Reversed Array: ");
+	for (int i = 0; i < size; i++) {
+		printf("%d ", arrayarr[i]);
+	}
+}
+int main() {
+	int originalArr[] = {1, 2, 3, 4, 5};
+	int size = sizeof(originalArr) / sizeof(originalArr[0]);
+	reverseArray(originalArr, size);
+	return 0;
+}
