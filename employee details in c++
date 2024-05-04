@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class ElectricityBill {
+private:
+    int consumerNo;
+    string consumerName;
+    int prevMonthReading;
+    int currMonthReading;
+    string connectionType;
+
+public:
+    ElectricityBill(int no, string name, int prevReading, int currReading, string type) {
+        consumerNo = no;
+        consumerName = name;
+        prevMonthReading = prevReading;
+        currMonthReading = currReading;
+        connectionType = type;
+    }
+
+    float calculateBillAmount() {
+        int unitsConsumed = currMonthReading - prevMonthReading;
+        float billAmount = 0.0;
+
+        if (connectionType == "domestic") {
+            if (unitsConsumed <= 100)
+                billAmount = unitsConsumed * 1;
+            else if (unitsConsumed <= 200)
+                billAmount = 100 * 1 + (unitsConsumed - 100) * 2.50;
+            else if (unitsConsumed <= 500)
+                billAmount = 100 * 1 + 100 * 2.50 + (unitsConsumed - 200) * 4;
+            else
+                billAmount = 100 * 1 + 100 * 2.50 + 300 * 4 + (unitsConsumed - 500) * 6;
+        }
+
+        return billAmount;
+    }
+};
+
+int main() {
+    // Example usage:
+    ElectricityBill consumer1(123, "John Doe", 500, 600, "domestic");
+    float billAmount = consumer1.calculateBillAmount();
+    cout << "Bill amount for consumer: " << billAmount << " Rs." << endl;
+
+    return 0;
+}
