@@ -1,0 +1,9 @@
+class Animal {  
+  // fields and methods
+} 
+
+// Dog inherits from Animal
+class Dog : Animal {
+  // fields and methods of Animal 
+  // fields and methods of Dog 
+}
